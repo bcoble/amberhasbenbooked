@@ -1,0 +1,46 @@
+2. Contacts Dedup - https://kwri-jira.kw.com/browse/COM-13979
+3. Disable SP popup https://kwri-jira.kw.com/browse/COM-13321
+4. Clear tags https://kwri-jira.kw.com/browse/COM-13322
+5. Summary page redesign https://kwri-jira.kw.com/browse/COM-13325
+6. Add SP to Contacts timeline https://kwri-jira.kw.com/browse/COM-13288
+7. Add sub-flow to KG https://kwri-jira.kw.com/browse/COM-13324
+8. Replace Contacts with tags UX https://kwri-jira.kw.com/browse/COM-13323
+
+
+clad;
+
+font-family: 'p22_dearestswash';
+font-family: 'p22_dearestscript';
+font-family: 'p22_dearest_alternates';
+
+Mrs Eaves OT Bold Italic
+********************************
+font-family: mrs-eaves, serif;
+font-weight: 700;
+font-style: italic;
+
+Mrs Eaves OT Roman
+********************************
+font-family: mrs-eaves, serif;
+font-weight: 400;
+font-style: normal;
+
+Mrs Eaves OT Bold
+********************************
+font-family: mrs-eaves, serif;
+font-weight: 700;
+font-style: normal;
+
+Mrs Eaves OT Italic
+********************************
+font-family: mrs-eaves, serif;
+font-weight: 400;
+font-style: italic;
+
+Mrs Eaves Roman All Small Caps
+********************************
+font-family: mrs-eaves-roman-all-small-ca, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+
