@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="styles/pikabu-theme.css">
         <link href="styles/default.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="https://use.typekit.net/xrx1xjf.css">
+        <script src="libs/jquery/jquery.js"></script>
+        <script type="text/javascript" src="scripts/rsvp.js"></script>
         <script type="text/javascript">
             // Scroll the page past URL bar if user did not scroll manually, and
             // hash is either absent or is a mobify properties override.
@@ -22,8 +24,8 @@
                     }
                 }, 250);
             };
-        </script> 
-        <script src="libs/jquery/jquery.js"></script><script type="text/javascript" src="libs/jquery/pikabu.js"></script><script>
+        </script>
+        <script type="text/javascript" src="libs/jquery/pikabu.js"></script><script>
             $(function() {
                 pikabu = new Pikabu();
                 // Script to adjust element heights for demo
@@ -37,7 +39,7 @@
                     pikabu.closeSidebars();
                 });
             });
-        </script>  
+        </script>
         <!-- counter -->
         <script>
             // Set the date we're counting down to
@@ -48,20 +50,20 @@
 
               // Get today's date and time
               var now = new Date().getTime();
-                
+
               // Find the distance between now and the count down date
               var distance = countDownDate - now;
-                
+
               // Time calculations for days, hours, minutes and seconds
               var days = Math.floor(distance / (1000 * 60 * 60 * 24));
               var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
               var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
               var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                
+
               // Output the result in an element with id="counter"
               document.getElementById("counter").innerHTML = "<span>" + days + " <strong>days</strong>" + "</span>" + "<span>" + hours  + " <strong>hrs</strong>" + "</span>" + "<span>" + minutes  + " <strong>min</strong>" + "</span>" +  "<span>" + seconds  + " <strong>sec</strong>" + "</span>";
-                
-              // If the count down is over, write some text 
+
+              // If the count down is over, write some text
               if (distance < 0) {
                 clearInterval(x);
                 document.getElementById("counter").innerHTML = "We Got Married!";
@@ -70,18 +72,17 @@
         </script>
     </head>
     <body>
-
-            <img class="fixed" src="images/hero_1.png" alt="">
-    <div class="wrapper home">                    
+    <img class="fixed" src="images/hero_1.png" alt="">
+    <div class="wrapper home">
         <div class="top-bar" id="back-to-top">
             <div class="pikabu-viewport">
                 <div class="pikabu-sidebar pikabu-sidebar--left">
                     <ul>
-                        <li><a href="#back-to-top">Back to Top</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Details</a></li>
-                        <li><a href="#">Registry</a></li>
-                        <li><a href="#">RSVP</a></li>
+                        <li><a href="#intro-top">Back to Top</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#details">Details</a></li>
+                        <li><a href="#rsvp">RSVP</a></li>
+                        <li><a href="#registry">Registry</a></li>
                     </ul>
                 </div>
                 <div class="pikabu-container">
@@ -93,32 +94,28 @@
             </div>
         </div><!--TOPBAR-->
 
-
-
-
-        <div class="intro section">
+        <div id="intro-top" class="intro section">
             <h1>Meet the Future Cobles</h1>
             <p>Jan 25th, 2020</p>
             <p class="counter" id="counter"></p>
         </div>
 
-
         <marquee class="m-1" scrollamount = "3">We are all a little weird and life's a little weird, and when we find someone whose weirdness is compatible with ours, we join up with them and fall in mutual weirdness and call it love.<span>Dr. Seuss</span></marquee>
 
-
         <div class="bride section">
+            <div class="profile-pic"></div>
             <div class="section-title"><h3>Amber Stratman</h3><span>bride</span></div>
             <p>Amber grew up in the tiny town of Shiner, TX with her two big sisters and her parents. In highschool she could usually be found playing volleyball, acting in plays or leading a marching band while dressed as a pirate. As an adult, she loves going to broadway musicals, cats, reading, creative hobbies such as painting, sculpting, woodworking, etc. Her passion for all things creative led her to her dream job as a Designer for Keller Williams Realty where she met many lifelong friends. Her favorite color is blue. Particularly the blue of her fiance's beautiful blue eyes. ☺️ Also... don't challenge her at Harry Potter trivia. You will lose.</p>
-            <div class="profile-pic"></div>
         </div>
-
 
         <div class="groom section">
-            <div class="section-title"><h3>Ben Coble</h3><span>groom</span></div>
-            <p>Ben moved to 5 different states with his parents and younger brother before finding their way to their home in Melbourne, Florida. Growing up you could find Ben playing video games, endlessly reading or creating mischief with his buddies on the beach. 5 years later he graduated first in his class from Melbourne High School. He always had a knack for technology, math and science (not to mention video games) which naturally led him down the path of double majoring in math and computer science at Rose Hulman University to become a software engineer. Today he has a great love for books and hopes to one day design and build a video game from scratch.</p>
             <div class="profile-pic"></div>
+            <div class="section-title">
+              <h3>Ben Coble</h3>
+              <span>groom</span>
+            </div>
+            <p>Ben moved to 5 different states with his parents and younger brother before finding their way to their home in Melbourne, Florida. Growing up you could find Ben playing video games, endlessly reading or creating mischief with his buddies on the beach. 5 years later he graduated first in his class from Melbourne High School. He always had a knack for technology, math and science (not to mention video games) which naturally led him down the path of double majoring in math and computer science at Rose Hulman University to become a software engineer. Today he has a great love for books and hopes to one day design and build a video game from scratch.</p>
         </div>
-
 
         <div class="details section">
             <div class="section-title"><h3>Details</h3><span>wedding</span></div>
@@ -131,36 +128,59 @@
                 Dripping Springs, TX 78620<br/>
             </p>
         </div>
-        <iframe src="https://snazzymaps.com/embed/178579" width="100%" height="300px" style="border:none;"></iframe>
-
+        <iframe src="https://snazzymaps.com/embed/178579" class="g-map"></iframe>
 
         <div class="rsvp section">
-            <div class="section-title"><h3>Please Respond</h3><span>r.s.v.p.</span></div>
-            <p>Form Title Here</p>
-            <input type="field"/>
+            <form id="rsvp-form">
+              <div class="section-title rsvp-form__section">
+                <!-- Amber needs to fix styles :) -->
+                <h3>Please Respond</h3>
+              </div>
+              <div class="notice rsvp-form__section">
+                <span>We ask that you kindly respond by December 1st.</span>
+              </div>
+              <div class="decision rsvp-form__section">
+                <input type="radio" id="rsvp-accepts" value="'yes'" name="rsvp-decision" checked>Accepts with joy</input>
+                <input type="radio" id="rsvp-decline" value="'no'" name="rsvp-decision">Declines with regrets</input>
+              </div>
+              <div id="note-section" class="decline-note rsvp-form__section hide-decline-note">
+                <label for="rsvp-decline-note">Note</label>
+                <input type="textarea" id="decline-note" name="decline-note"/>
+              </div>
+              <div class="number-of-guests rsvp-form__section">
+                <label for="number-of-guests">Number of Guests</label>
+                <input type="number" max="6" min="1" value="1" id="number-of-guests" name="number-of-guests"/>
+              </div>
+              <div class="guest-info rsvp-form__section" id="guest-info-wrapper">
+                <div class="">
+                  <label for="guest-name">First and Last Name</label>
+                  <input type="text" id="guest-name" name="guest-name"/>
+                  <label for="plate-type">Plate Type</label>
+                  <select type="select" id="plate-type" name="plate-type">
+                    <option value="">Select</option>
+                    <option value="brisket">Brisket</option>
+                    <option value="vegetarian">Vegetarian</option>
+                  </select>
+                </div>
+              </div>
+              <div class="submit rsvp-form__section">
+                <button class="rsvp-submit-btn" id="rsvp-submit-btn">SEND</button>
+              </div>
+            </form>
         </div>
 
         <marquee class="m-2" scrollamount = "3">Books are a uniquely portable magic.<span>Stephen King</span></marquee>
-
 
         <div class="registry section">
             <div class="section-title"><h3>Registry</h3><span>view our</span></div>
             <p>
                 Amber and Ben are registered at <a href="https://www.amazon.com/wedding/share/coble" target="_blank">Amazon</a> and <a href="https://www.target.com/gift-registry/giftgiver?registryId=034efff5d9f3422b965512349874cade&type=WEDDING" target="_blank">Target</a>. Thank you for being a part of this special time in our lives. We hope to see you soon!
-            </p>    
+            </p>
         </div>
 
-
     </div><!--WRAPPER-->
-        
-        
+
 <div id="footer">
 </div>
 
 </body></html>
-
-
-
-
-
-
