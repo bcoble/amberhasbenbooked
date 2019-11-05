@@ -140,23 +140,23 @@
                 <span>We ask that you kindly respond by December 1st.</span>
               </div>
               <div class="decision rsvp-form__section">
-                <input type="radio" id="rsvp-accepts" value="1" name="rsvp-decision" checked>Accepts with joy</input>
-                <input type="radio" id="rsvp-decline" value="2" name="rsvp-decision">Declines with regrets</input>
+                <input type="radio" id="rsvp-accepts" value="'yes'" name="rsvp-decision" checked>Accepts with joy</input>
+                <input type="radio" id="rsvp-decline" value="'no'" name="rsvp-decision">Declines with regrets</input>
               </div>
-              <div id="decline-note-section" class="decline-note rsvp-form__section hide-decline-note">
+              <div id="note-section" class="decline-note rsvp-form__section hide-decline-note">
                 <label for="rsvp-decline-note">Note</label>
-                <input type="textarea" id="rsvp-decline-note"/>
+                <input type="textarea" id="decline-note" name="decline-note"/>
               </div>
               <div class="number-of-guests rsvp-form__section">
-                <label for="rsvp-number-of-guests">Number of Guests</label>
-                <input type="number" max="6" min="1" value="1" id="rsvp-number-of-guests"/>
+                <label for="number-of-guests">Number of Guests</label>
+                <input type="number" max="6" min="1" value="1" id="number-of-guests" name="number-of-guests"/>
               </div>
               <div class="guest-info rsvp-form__section" id="guest-info-wrapper">
                 <div class="">
                   <label for="guest-name">First and Last Name</label>
-                  <input type="text" id="guest-name"/>
+                  <input type="text" id="guest-name" name="guest-name"/>
                   <label for="plate-type">Plate Type</label>
-                  <select type="select" id="plate-type">
+                  <select type="select" id="plate-type" name="plate-type">
                     <option value="">Select</option>
                     <option value="brisket">Brisket</option>
                     <option value="vegetarian">Vegetarian</option>
@@ -164,7 +164,7 @@
                 </div>
               </div>
               <div class="submit rsvp-form__section">
-                <button class="rsvp-submit-btn">SEND</button>
+                <button class="rsvp-submit-btn" id="rsvp-submit-btn">SEND</button>
               </div>
             </form>
         </div>
