@@ -84,7 +84,7 @@ body{
     display: flex;
   }
   .rsvp-form__section {
-    background-color: tan;
+    /* background-color: tan; */
     margin-bottom: 16px;
   }
   .submit.rsvp-form__section {

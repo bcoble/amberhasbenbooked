@@ -10,8 +10,10 @@
         <link rel="stylesheet" href="styles/pikabu.css">
         <link rel="stylesheet" href="styles/pikabu-theme.css">
         <link href="styles/default.css" rel="stylesheet" type="text/css" />
+        <link href="styles/form.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="https://use.typekit.net/xrx1xjf.css">
-        <script src="libs/jquery/jquery.js"></script>
+        <!-- <script src="libs/jquery/jquery.js"></script> -->
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
         <script type="text/javascript" src="scripts/rsvp.js"></script>
         <script type="text/javascript">
             // Scroll the page past URL bar if user did not scroll manually, and
@@ -127,6 +129,10 @@
                 250 South Canyonwood Dr.<br/>
                 Dripping Springs, TX 78620<br/>
             </p>
+
+            <p>
+              A hotel block is available at the Sleep Inn. Canyonwood Ridge has a <a href="https://docs.google.com/document/d/1azgjV03O1frSFMFatPxTPxx3vphL3uy8KCBRlu16kbY/edit?usp=sharing"/> list of nearby hotels</a> if the block is full or you'd like something else.
+            </p>
         </div>
         <iframe src="https://snazzymaps.com/embed/178579" class="g-map"></iframe>
 
@@ -137,34 +143,44 @@
                 <h3>Please Respond</h3>
               </div>
               <div class="notice rsvp-form__section">
-                <span>We ask that you kindly respond by December 1st.</span>
+                <span>We ask that you kindly respond before the first of December 2019.</span>
               </div>
               <div class="decision rsvp-form__section">
-                <input type="radio" id="rsvp-accepts" value="'yes'" name="rsvp-decision" checked>Accepts with joy</input>
-                <input type="radio" id="rsvp-decline" value="'no'" name="rsvp-decision">Declines with regrets</input>
+                <input type="radio" id="rsvp-accepts" value="yes" name="rsvp-decision" checked>Accepts with joy</input>
+                <input type="radio" id="rsvp-decline" value="no" name="rsvp-decision">Declines with regrets</input>
               </div>
               <div id="note-section" class="decline-note rsvp-form__section hide-decline-note">
+                <div class="decline-name">
+                  <label for="decline-name">First and Last Name</label>
+                  <input name="decline-name" id="decline-name"/>
+                </div>
                 <label for="rsvp-decline-note">Note</label>
-                <input type="textarea" id="decline-note" name="decline-note"/>
+                <textarea id="decline-note" name="decline-note" placeholder="Feel free to leave us a note here... We'd love to hear from you!"></textarea>
               </div>
               <div class="number-of-guests rsvp-form__section">
-                <label for="number-of-guests">Number of Guests</label>
-                <input type="number" max="6" min="1" value="1" id="number-of-guests" name="number-of-guests"/>
+                <div class="amber-replace-2">
+                  <label for="number-of-guests">Number of Guests</label>
+                  <input type="number" max="6" min="1" value="1" id="number-of-guests" name="number-of-guests"/>
+                </div>
               </div>
               <div class="guest-info rsvp-form__section" id="guest-info-wrapper">
-                <div class="">
-                  <label for="guest-name">First and Last Name</label>
-                  <input type="text" id="guest-name" name="guest-name"/>
-                  <label for="plate-type">Plate Type</label>
-                  <select type="select" id="plate-type" name="plate-type">
-                    <option value="">Select</option>
-                    <option value="brisket">Brisket</option>
-                    <option value="vegetarian">Vegetarian</option>
-                  </select>
+                <div class="guest-item">
+                  <div class="split">
+                    <label for="guest-name">First and Last Name</label>
+                    <input type="text" id="guest-name" name="guest-name" class="guest-name" required/>
+                  </div>
+                  <div class="split">
+                    <label for="plate-type">Plate Type</label>
+                    <select type="select" id="plate-type" name="plate-type" class="plate-type" required>
+                      <option value="">Select</option>
+                      <option value="brisket">Brisket</option>
+                      <option value="vegetarian">Vegetarian</option>
+                    </select>
+                  </div>
                 </div>
               </div>
               <div class="submit rsvp-form__section">
-                <button class="rsvp-submit-btn" id="rsvp-submit-btn">SEND</button>
+                <button class="rsvp-submit-btn" id="rsvp-submit-btn" type="submit">SEND</button>
               </div>
             </form>
         </div>
