@@ -78,10 +78,15 @@ $(document).on('change', '#rsvp-accepts', function(event) {
 // Add or remove guest row inputs
 $(document).on('change', '#number-of-guests', function(event) {
   const newCount = event.currentTarget.value;
-  if (newCount > previousNumOfGuests) {
-    $('#guest-info-wrapper').append(guestInputHTML);
-  } else if (newCount < previousNumOfGuests) {
-    $('#guest-info-wrapper > .guest-item:last-of-type()').remove()
+
+  if (newCount > previousNumOfGuests && newCount <= 6 && newCount >= 1) {
+    const diff = newCount - previousNumOfGuests;
+    for (let i = 0; i < diff; i++) {
+      $('#guest-info-wrapper').append(guestInputHTML);
+    }
+    previousNumOfGuests = newCount;
+  } else if (newCount < previousNumOfGuests && newCount <= 6 && newCount >= 1) {
+    $('#guest-info-wrapper > .guest-item:last-of-type()').remove();
+    previousNumOfGuests = newCount;
   }
-  previousNumOfGuests = newCount;
 });
