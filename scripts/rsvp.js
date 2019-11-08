@@ -3,6 +3,23 @@ let previousNumOfGuests = 1;
 var $form = $('form#rsvp-form'),
     url = 'https://script.google.com/macros/s/AKfycbwCTPFpbEd5dODjuqF2JUvRvhETNkj6w1AXrqlcICNkL8yz4hM/exec'
 
+const guestInputHTML = `
+<div class="guest-item">
+  <div class="split">
+    <label for="guest-name">First and Last Name</label>
+    <input type="text" id="guest-name" name="guest-name" class="guest-name" required/>
+  </div>
+  <div class="split">
+    <label for="plate-type">Plate Type</label>
+    <select type="select" id="plate-type" name="plate-type" class="plate-type" required>
+      <option value="">Select</option>
+      <option value="brisket">Brisket</option>
+      <option value="vegetarian">Vegetarian</option>
+    </select>
+  </div>
+</div>
+`;
+
 $(document).on('submit', 'form', function(event){
   const _data = $(this).serializeArray();
   const guests = _data.filter(formItem => {
@@ -30,14 +47,12 @@ $(document).on('submit', 'form', function(event){
 
 $(document).on('change', '#rsvp-decline', function(event) {
   $('#note-section').show();
-  $('#decline-name').addAttr('required');
+  $('#decline-name').attr('required', 'required');
 
   $('.number-of-guests').hide();
-  $('#guest-name').removeAttr('required');
-
+  $('.guest-name').removeAttr('required');
   $('#guest-info-wrapper').hide();
-  $('#plate-type').removeAttr('required');
-
+  $('.plate-type').removeAttr('required');
 });
 
 $(document).on('change', '#rsvp-accepts', function(event) {
@@ -45,16 +60,16 @@ $(document).on('change', '#rsvp-accepts', function(event) {
   $('#decline-name').removeAttr('required');
 
   $('.number-of-guests').show();
-  $('#guest-name').addAttr('required');
+  $('.guest-name').attr('required', 'required');
 
   $('#guest-info-wrapper').show();
-  $('#plate-type').addAttr('required');
+  $('.plate-type').attr('required', 'required');
 });
 
 $(document).on('change', '#number-of-guests', function(event) {
   const newCount = event.currentTarget.value;
   if (newCount > previousNumOfGuests) {
-    $('#guest-info-wrapper').append('<p>test</p>');
+    $('#guest-info-wrapper').append(guestInputHTML);
   } else if (newCount < previousNumOfGuests) {
     $('#guest-info-wrapper > .guest-item:last-of-type()').remove()
   }
